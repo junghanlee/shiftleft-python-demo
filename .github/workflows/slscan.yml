@@ -6,7 +6,7 @@ jobs:
   Scan-Build:   
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Perform Scan
       uses: ShiftLeftSecurity/scan-action@master
       env:
@@ -14,7 +14,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         SCAN_AUTO_BUILD: true
       with:
-        output: slscan_report  
+        output: reports  
 
     - name: Upload report
       uses: actions/upload-artifact@v2
