@@ -1,10 +1,10 @@
 name: SL Scan
 
-on: pull_request
+on: push
 
 jobs:
-  Scan-Build:   
-    runs-on: ubuntu-latest
+  NextGen-Static-Analysis:   
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
     - name: Perform Scan
@@ -19,4 +19,5 @@ jobs:
     - name: Upload report
       uses: actions/upload-artifact@v2
       with:
+        name: slscan
         path: reports
